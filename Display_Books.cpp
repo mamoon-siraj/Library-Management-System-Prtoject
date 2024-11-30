@@ -5,10 +5,7 @@ using namespace std;
 
 void display_books();
 int main(){
-    // const std::string filename = "Books.txt";
-    // std::string Books;
-    // // std::cout << "Enter the name of the file to display: ";
-    // // std::cin >> filename;
+    
     display_books();
   
 return 0;
