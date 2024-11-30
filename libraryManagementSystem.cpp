@@ -94,6 +94,11 @@ void add_books(){
 }
 
 void display_books(){
+
+    ifstream file_1("Novels.csv");
+    ifstream file_2("Self-Help_books.csv");
+    ifstream file_3("Self-Help_books.csv");
+
     int cat;
 
     cout<<"Enter the category."<<endl;
@@ -105,8 +110,6 @@ void display_books(){
     switch (cat)
     {
         case 1:
-            ifstream file_1("Novels.csv");
-
         if (file_1.is_open()) {
                 string line;
             while (getline(file_1, line)) { 
@@ -120,8 +123,6 @@ void display_books(){
         break;
 
         case 2:
-            ifstream file_2("Self-Help_books.csv");
-
             if (file_2.is_open()) {
                 string line;
                 while (getline(file_2, line)) { 
@@ -134,8 +135,6 @@ void display_books(){
         break;
 
         case 3:
-            ifstream file_3("Academics_Books.csv");
-
             if (file_3.is_open()) {
                 string line;
             while (getline(file_3, line)) { 
@@ -150,20 +149,8 @@ void display_books(){
 
     
     default:
+        cout<<"Select Valid Category."<<endl;
         break;
-    }
-    ifstream file("Books.csv");
-
-    if (file.is_open()) {
-          string line;
-        while (getline(file, line)) { 
-            cout << line <<endl; 
-        }
-
-        file.close();
-    }   
-    else{
-        cout <<"Error could not open the file."<<endl; 
     }
 
 }
