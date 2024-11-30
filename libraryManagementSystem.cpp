@@ -5,7 +5,6 @@ using namespace std;
 void librarian_menu();
 void display_books();
 void add_books();
-
 void student_menu();
 
 int main(){
@@ -24,7 +23,7 @@ int main(){
         break;
 
         case 2:
-            //student_menu();   
+            student_menu();   
         break;
 
         default:
@@ -108,5 +107,39 @@ void display_books(){
         cout <<"Error could not open the file."<<endl; 
     }
 
+}
+
+void student_menu(){
+
+    int option;
+
+    cout<<"Select the appropriate."<<endl;
+    cout<<"1.View books."<<endl;
+    cout<<"2.Borrow book(s)."<<endl;
+    cout<<"3.Return borrow book(s)."<<endl;
+
+    cin>>option;
+
+    switch (option)
+    {
+        case 1:
+            display_books();
+        break;
+
+        case 2:
+            //for borrowing books.
+        break;
+
+        case 3:
+            //return borrow books.
+        break;
+
+        default:
+            cout<<"Selet valid option."<<endl;
+            cout<<"1.View books."<<endl;
+            cout<<"2.Borrow book(s)."<<endl;
+            cout<<"3.Return borrow book(s)."<<endl;
+        break;
+    }
 }
 
