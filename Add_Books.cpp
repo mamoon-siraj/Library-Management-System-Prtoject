@@ -2,13 +2,18 @@
 #include <fstream>
 #include <string>
 using namespace std;
+
 void add_books();
+
 int main() {
+
     add_books();
 
-    return 0;
+return 0;
 }
+
 void add_books(){
+
     const string filename = "Books.txt"; // File to write to
     ofstream file(filename, std::ios::app); // Open in append mode
 

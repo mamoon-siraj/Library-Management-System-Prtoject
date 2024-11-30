@@ -10,19 +10,10 @@ int main(){
     // // std::cout << "Enter the name of the file to display: ";
     // // std::cin >> filename;
     display_books();
-
-    struct{
-        string bookTitle;
-        string authorName;     
-    }bookInfo;
-
-    cout<<"Enter book title or Author name."<<endl;
-    getline(cin, bookInfo.bookTitle);
-    cin.ignore();
-    getline(cin, bookInfo.authorName);
-   
-    return 0;
+  
+return 0;
 }
+
 void display_books(){
      ifstream file("Books.txt"); // Open the file for reading
 
