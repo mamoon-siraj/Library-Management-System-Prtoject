@@ -64,31 +64,95 @@ void librarian_menu(){
 
 void add_books(){
 
+    int cat;
     int serial_no;
     string book_title;
     string author_name;
 
-    ofstream file("Books.txt", ios::app); 
+    ofstream file_1("Novel.csv", ios::app);
+    ofstream file_2("Academics.csv", ios::app);
+    ofstream file_3("Self-Help_books.csv", ios::app);
 
-    if (file.is_open()) { 
-        cout<<"Enter Serial No."<<endl;
-        cin>>serial_no;
+    cout<<"Enter the category."<<endl;
+    cout<<"1. Novel."<<endl;
+    cout<<"2. Academics."<<endl;
+    cout<<"3. Self-help."<<endl;
+    cin>>cat;
 
-        cin.ignore();
+    switch (cat)
+    {
+        case 1:
+            if (file_1.is_open()) { 
+                cout<<"Enter Serial No."<<endl;
+                cin>>serial_no;
 
-        cout<<"Enter book title"<<endl;
-        getline(cin, book_title);
+                cin.ignore();
 
-        cout<<"Enter Author name."<<endl;
-        getline(cin, author_name);
+                cout<<"Enter book title"<<endl;
+                getline(cin, book_title);
 
-        file<<serial_no<<"\t"<<book_title<<" by "<<author_name<<endl;
+                cout<<"Enter Author name."<<endl;
+                getline(cin, author_name);
+
+                file_1<<serial_no<<","<<book_title<<","<<author_name<<endl;
+            }else{
+                cout<<"Error. Could not open the file."<<endl;
+            }
+
+            file_1.close();
+        break;
+
+        case 2:
+            if (file_2.is_open()) { 
+                cout<<"Enter Serial No."<<endl;
+                cin>>serial_no;
+
+                cin.ignore();
+
+                cout<<"Enter book title"<<endl;
+                getline(cin, book_title);
+
+                cout<<"Enter Author name."<<endl;
+                getline(cin, author_name);
+
+                file_2<<serial_no<<","<<book_title<<","<<author_name<<endl;
+            }else{
+                cout<<"Error. Could not open the file."<<endl;
+            }
+
+            file_2.close();
+        break;
+
+        case 3:
+            if (file_3.is_open()) { 
+                cout<<"Enter Serial No."<<endl;
+                cin>>serial_no;
+
+                cin.ignore();
+
+                cout<<"Enter book title"<<endl;
+                getline(cin, book_title);
+
+                cout<<"Enter Author name."<<endl;
+                getline(cin, author_name);
+
+                file_3<<serial_no<<","<<book_title<<","<<author_name<<endl;
+            }else{
+                cout<<"Error. Could not open the file."<<endl;
+            }
+
+            file_3.close();
+        break;
+
+        default:
+            cout<<"Enter valid category."<<endl;
+            cout<<"1. Novel."<<endl;
+            cout<<"2. Academics."<<endl;
+            cout<<"3. Self-help."<<endl;
+            cin>>cat;
+        break;
     }
-    else{
-        cout<<"Error. Could not open the file."<<endl;
-    }
-
-    file.close();
+    
     cout << "Text added to the file successfully."<<endl;
     
 }
@@ -110,16 +174,16 @@ void display_books(){
     switch (cat)
     {
         case 1:
-        if (file_1.is_open()) {
+            if (file_1.is_open()) {
                 string line;
-            while (getline(file_1, line)) { 
-                cout << line <<endl; 
-        }
+                while (getline(file_1, line)) { 
+                    cout << line <<endl; 
+                }
 
-            file_1.close();
-        }else{
-            cout <<"Error could not open the file."<<endl; 
-        }
+                file_1.close();
+            }else{
+                cout <<"Error could not open the file."<<endl; 
+            }
         break;
 
         case 2:
@@ -127,7 +191,7 @@ void display_books(){
                 string line;
                 while (getline(file_2, line)) { 
                 cout << line <<endl; 
-            }
+                }
                 file_2.close();
             }else{
                  cout <<"Error could not open the file."<<endl; 
@@ -137,19 +201,17 @@ void display_books(){
         case 3:
             if (file_3.is_open()) {
                 string line;
-            while (getline(file_3, line)) { 
-                cout << line <<endl; 
-            }
-            file_3.close();
+                while (getline(file_3, line)) { 
+                    cout << line <<endl; 
+                }
+                file_3.close();
             }else{
-            cout <<"Error could not open the file."<<endl; 
-        }
+                cout <<"Error could not open the file."<<endl; 
+            }
         break;
 
-
-    
-    default:
-        cout<<"Select Valid Category."<<endl;
+        default:
+            cout<<"Select Valid Category."<<endl;
         break;
     }
 
@@ -197,7 +259,6 @@ void borrow_book(){
 
     cout<<"Enter book title."<<endl;
     getline(cin, book_title);
-
 
 }
 
