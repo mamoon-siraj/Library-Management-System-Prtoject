@@ -1,5 +1,6 @@
 #include<iostream>
 #include<fstream>
+#include<sstream>
 using namespace std;
 
 void librarian_menu();
@@ -93,7 +94,65 @@ void add_books(){
 }
 
 void display_books(){
-    ifstream file("Books.txt");
+    int cat;
+
+    cout<<"Enter the category."<<endl;
+    cout<<"1. Novel."<<endl;
+    cout<<"2. Academics."<<endl;
+    cout<<"3. Self-help."<<endl;
+    cin>>cat;
+
+    switch (cat)
+    {
+        case 1:
+            ifstream file_1("Novels.csv");
+
+        if (file_1.is_open()) {
+                string line;
+            while (getline(file_1, line)) { 
+                cout << line <<endl; 
+        }
+
+            file_1.close();
+        }else{
+            cout <<"Error could not open the file."<<endl; 
+        }
+        break;
+
+        case 2:
+            ifstream file_2("Self-Help_books.csv");
+
+            if (file_2.is_open()) {
+                string line;
+                while (getline(file_2, line)) { 
+                cout << line <<endl; 
+            }
+                file_2.close();
+            }else{
+                 cout <<"Error could not open the file."<<endl; 
+            }
+        break;
+
+        case 3:
+            ifstream file_3("Academics_Books.csv");
+
+            if (file_3.is_open()) {
+                string line;
+            while (getline(file_3, line)) { 
+                cout << line <<endl; 
+            }
+            file_3.close();
+            }else{
+            cout <<"Error could not open the file."<<endl; 
+        }
+        break;
+
+
+    
+    default:
+        break;
+    }
+    ifstream file("Books.csv");
 
     if (file.is_open()) {
           string line;
@@ -128,10 +187,12 @@ void student_menu(){
 
         case 2:
             //for borrowing books.
+            cout<<"Case two still pending."<<endl;
         break;
 
         case 3:
             //return borrow books.
+            cout<<"Case three still pending."<<endl;
         break;
 
         default:
@@ -141,5 +202,15 @@ void student_menu(){
             cout<<"3.Return borrow book(s)."<<endl;
         break;
     }
+}
+
+void borrow_book(){
+    string book_title;
+    int quantity;
+
+    cout<<"Enter book title."<<endl;
+    getline(cin, book_title);
+
+
 }
 
