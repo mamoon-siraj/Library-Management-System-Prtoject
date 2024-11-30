@@ -63,18 +63,19 @@ void librarian_menu(){
 }
 
 void display_books(){
-     ifstream file("Books.txt"); // Open the file for reading
+    ifstream file("Books.txt");
 
-    if (!file.is_open()) { // Check if the file opened successfully
-        cerr << "Error: Could not open the file.\n";        
-    }
+    if (file.is_open()) {
+          string line;
+        while (getline(file, line)) { 
+            cout << line <<endl; 
+        }
+
+        file.close();
+    }   
     else{
-    string line;
-    while (getline(file, line)) { // Read the file line by line
-        cout << line <<endl; // Display the line on the console
+        cout <<"Error could not open the file."<<endl; 
     }
 
-    file.close(); // Close the file (optional)
-    }
 }
 

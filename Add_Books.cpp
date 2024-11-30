@@ -14,25 +14,31 @@ return 0;
 
 void add_books(){
 
-    const string filename = "Books.txt"; // File to write to
-    ofstream file(filename, std::ios::app); // Open in append mode
+    int serial_no;
+    string book_title;
+    string author_name;
 
-    if (!file.is_open()) { // Check if the file opened successfully
-        cerr << "Error: Could not open the file \"" << filename << "\".\n";
+    ofstream file("Books.txt", ios::app); 
+
+    if (file.is_open()) { 
+        cout<<"Enter Serial No."<<endl;
+        cin>>serial_no;
+
+        cin.ignore();
+
+        cout<<"Enter book title"<<endl;
+        getline(cin, book_title);
+
+        cout<<"Enter Author name."<<endl;
+        getline(cin, author_name);
+
+        file<<serial_no<<"\t"<<book_title<<" by "<<author_name<<endl;
     }
     else{
-    cout << "Enter text to add to the file (type 'exit' to stop):\n";
-    string input;
-
-    while (true) {
-        getline(cin, input); // Get input from the user
-        if (input == "exit") {
-            break; // Stop if the user types 'exit'
-        }
-        file << input << '\n'; // Write the input to the file
+        cout<<"Error. Could not open the file."<<endl;
     }
 
-    file.close(); // Close the file
-    cout << "Text added to the file successfully.\n";
-    }
+    file.close();
+    cout << "Text added to the file successfully."<<endl;
+    
 }
