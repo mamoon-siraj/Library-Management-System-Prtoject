@@ -47,8 +47,7 @@ void librarian_menu(){
     switch (option)
     {
         case 1:
-            //add_books();
-            cout<<"Still working on it."<<endl;
+            add_books();
         break;
 
         case 2:
@@ -72,7 +71,7 @@ void display_books(){
     else{
     string line;
     while (getline(file, line)) { // Read the file line by line
-        cout << line << '\n\n'; // Display the line on the console
+        cout << line <<endl; // Display the line on the console
     }
 
     file.close(); // Close the file (optional)
