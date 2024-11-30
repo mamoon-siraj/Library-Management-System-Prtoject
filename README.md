@@ -1,7 +1,7 @@
 # Library-Management-System-Prtoject
 This is the project for our programming fundamentals lab.
 <br>
-Created by the Anas Imran and Mamoon Siraj
+<h3>Created by the Anas Imran and Mamoon Siraj</h3>
 
 The project showcase the use of basic fundamentals programming comncepts to create a functional library management system.
 <br>
