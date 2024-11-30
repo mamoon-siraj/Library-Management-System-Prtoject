@@ -1,53 +1,50 @@
-#       Title                                           Authors
-1.      Don Quixote	                                    Miguel de Cervantes
-2.      Alice's Adventures in Wonderland	            Lewis Carroll
-3.      The Adventures of Huckleberry Finn	            Mark Twain
-4.      The Adventures of Tom Sawyer	                Mark Twain
-5.	    Treasure Island	                                Robert Louis Stevenson
-6.	    Pride and Prejudice	                            Jane Austen
-7.	    Wuthering Heights	                            Emily Brontë
-8.  	Jane Eyre	                                    Charlotte Brontë
-9.	    Moby Dick	                                    Herman Melville
-10. 	The Scarlet Letter	                            Nathaniel Hawthorne
-11.     Gulliver's Travels	                            Jonathan Swift
-12. 	The Pilgrim's Progress	                        John Bunyan
-13. 	A Christmas Carol	                            Charles Dickens
-14. 	David Copperfield	                            Charles Dickens
-15. 	A Tale of Two Cities	                        Charles Dickens
-16. 	Little Women	                                Louisa May Alcott
-17. 	Great Expectations	                            Charles Dickens
-18. 	The Hobbit, or, There and Back Again	        J.R.R. Tolkien
-19. 	Frankenstein, or, the Modern Prometheus	        Mary Shelley
-20. 	Oliver Twist	                                Charles Dickens
-21. 	Uncle Tom's Cabin	                            Harriet Beecher Stowe
-22. 	Crime and Punishment	                        Fyodor Dostoyevsky
-23. 	Madame Bovary: Patterns of Provincial life	    Gustave Flaubert
-24. 	The Return of the King	                        J.R.R. Tolkien
-25. 	Dracula	                                        Bram Stoker
-26. 	The Three Musketeers	                        Alexandre Dumas
-27. 	Brave New World	                                Aldous Huxley
-28. 	War and Peace	                                Leo Tolstoy
-29. 	To Kill a Mockingbird	                        Harper Lee
-30. 	The Wizard of Oz	                            L. Frank Baum
-31. 	Les Misérables	                                Victor Hugo
-32. 	The Secret Garden	                            Frances Hodgson Burnett
-33. 	Animal Farm	                                    George Orwell
-34. 	The Great Gatsby	                            F. Scott Fitzgerald
-35. 	The Little Prince	                            Antoine de Saint-Exupéry
-36. 	The Call of the Wild	                        Jack London
-37. 	20,000 Leagues Under the Sea	                Jules Verne
-38. 	Anna Karenina	                                Leo Tolstoy
-39. 	The Wind in the Willows	                        Kenneth Grahame
-40. 	The Picture of Dorian Gray	                    Oscar Wilde
-41. 	The Grapes of Wrath	                            John Steinbeck
-42. 	Sense and Sensibility	                        Jane Austen
-43. 	The Last of the Mohicans	                    James Fenimore Cooper
-44. 	Tess of the d'Urbervilles	                    Thomas Hardy
-45. 	Harry Potter and the Sorcerer's Stone	        J.K. Rowling
-46. 	Heidi	                                        Johanna Spyri
-47. 	Ulysses	                                        James Joyce
-48. 	The Complete Sherlock Holmes	                Arthur Conan Doyle
-49. 	The Count of Monte Cristo	                    Alexandre Dumas
-50. 	The Old Man and the Sea	Ernest                  Hemingway
-60.     Fifty Shades Of Grey
-Overflow
+1.    Don Quixote by Miguel de Cervantes
+2.    Alice's Adventures in Wonderland by Lewis Carroll
+3.    The Adventures of Huckleberry Finn by Mark Twain
+4.    The Adventures of Tom Sawyer by Mark Twain
+5.	  Treasure Island by Robert Louis Stevenson
+6.	  Pride and Prejudice by Jane Austen
+7.	  Wuthering Heights by Emily Brontë
+8.  	Jane Eyre by Charlotte Brontë
+9.	  Moby Dick by Herman Melville
+10. 	The Scarlet Letter by Nathaniel Hawthorne
+11.   Gulliver's Travels by Jonathan Swift
+12. 	The Pilgrim's Progress by John Bunyan
+13. 	A Christmas Carol by Charles Dickens
+14. 	David Copperfield by Charles Dickens
+15. 	A Tale of Two Cities by Charles Dickens
+16. 	Little Women by Louisa May Alcott
+17. 	Great Expectations by Charles Dickens
+18. 	The Hobbit, or, There and Back Again by J.R.R. Tolkien
+19. 	Frankenstein, or, the Modern Prometheus by Mary Shelley
+20. 	Oliver Twist by Charles Dickens
+21. 	Uncle Tom's Cabin by Harriet Beecher Stowe
+22. 	Crime and Punishment by Fyodor Dostoyevsky
+23. 	Madame Bovary: Patterns of Provincial life by Gustave Flaubert
+24. 	The Return of the King by J.R.R. Tolkien
+25. 	Dracula by Bram Stoker
+26. 	The Three Musketeers by Alexandre Dumas
+27. 	Brave New World by Aldous Huxley
+28. 	War and Peace by Leo Tolstoy
+29. 	To Kill a Mockingbird by Harper Lee
+30. 	The Wizard of Oz by L. Frank Baum
+31. 	Les Misérables by Victor Hugo
+32. 	The Secret Garden by Frances Hodgson Burnett
+33. 	Animal Farm by George Orwell
+34. 	The Great Gatsby by F. Scott Fitzgerald
+35. 	The Little Prince by Antoine de Saint-Exupéry
+36. 	The Call of the Wild by Jack London
+37. 	20,000 Leagues Under the Sea by Jules Verne
+38. 	Anna Karenina by Leo Tolstoy
+39. 	The Wind in the Willows by Kenneth Grahame
+40. 	The Picture of Dorian Gray by Oscar Wilde
+41. 	The Grapes of Wrath by John Steinbeck
+42. 	Sense and Sensibility by Jane Austen
+43. 	The Last of the Mohicans by James Fenimore Cooper
+44. 	Tess of the d'Urbervilles by Thomas Hardy
+45. 	Harry Potter and the Sorcerer's Stone by J.K. Rowling
+46. 	Heidi by Johanna Spyri
+47. 	Ulysses by James Joyce
+48. 	The Complete Sherlock Holmes by Arthur Conan Doyle
+49. 	The Count of Monte Cristo by Alexandre Dumas
+50. 	The Old Man and the Sea	Ernest by Hemingway
