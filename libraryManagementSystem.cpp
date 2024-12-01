@@ -152,8 +152,6 @@ void add_books(){
         break;
     }
     
-    cout << "Text added to the file successfully."<<endl;
-    
 }
 
 void display_books(){
@@ -237,7 +235,6 @@ void student_menu(){
             cout<<"Selet valid option."<<endl;
             cout<<"1.View books."<<endl;
             cout<<"2.Borrow book(s)."<<endl;
-            cout<<"3.Return borrow book(s)."<<endl;
         break;
     }
 }
