@@ -140,22 +140,28 @@ void add_books(){
     }
     
     cout << "Text added to the file successfully."<<endl;
-    cout<<"Want to add another one?(y/n)"<<endl;
-    cin>>exit;
     
-        
-    } while (exit == 'Y' || exit == 'y');
+}
+
+void display_books(){
     
-}   
+    int cat;
+    ifstream file_1("Novels.csv"), file_2("Self-Help_books.csv"), file_3("Self-Help_books.csv");
+   
+    cout<<"Enter the category."<<endl;
+    cout<<"1. Novel."<<endl;
+    cout<<"2. Academics."<<endl;
+    cout<<"3. Self-help."<<endl;
+    cin>>cat;
 
-void novel_category(){
-    ifstream file_1("Novels.csv");
-
-    if(file_1.is_open()) {
-        string str;
-        while (getline(file_1, str)) { 
-            cout << str <<endl; 
-        }
+    switch (cat)
+    {
+        case 1:
+            if (file_1.is_open()) {
+                string str;
+                while (getline(file_1, str)) { 
+                    cout << str <<endl; 
+                }
 
             file_1.close();
         }else{
@@ -209,33 +215,30 @@ void all_category(){
 
     ifstream file_2("academicbooks.csv");
 
-    if(file_2.is_open()) {
-        string str;
-        while (getline(file_2, str)) { 
-            cout << str <<endl; 
-        }
+    switch (option)
+    {
+        case 1:
+            display_books();
+        break;
 
-            file_2.close();
-    }else{
-            cout <<"Error could not open the file."<<endl; 
-    }
+        case 2:
+            borrow_book();
+        break;
 
-    ifstream file_3("selfHelpbooks.csv");
-
-    if(file_3.is_open()) {
-        string str;
-        while (getline(file_3, str)) { 
-            cout << str <<endl; 
-        }
-
-            file_3.close();
-    }else{
-            cout <<"Error could not open the file."<<endl; 
+        default:
+            cout<<"Selet valid option."<<endl;
+            cout<<"1.View books."<<endl;
+            cout<<"2.Borrow book(s)."<<endl;
+            cout<<"3.Return borrow book(s)."<<endl;
+        break;
     }
 }
 
-void display_books(){
-    
+void borrow_book() {
+    const char *a = "Novels.csv";
+    const char *b = "academicbooks.csv";
+    const char *c = "SelfHelpbooks.csv";
+
     int cat;
    
     cout<<"Enter the category."<<endl;
