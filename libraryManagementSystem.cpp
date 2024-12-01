@@ -242,146 +242,133 @@ void student_menu(){
     }
 }
 
-void borrow_book(){
-
-    char *a = "Novels.csv";
-    char *b = "Academics_Books.csv";
-    char *c = "Self-Help_books.csv";
+void borrow_book() {
+    const char *a = "Novels.csv";
+    const char *b = "academicbooks.csv";
+    const char *c = "SelfHelpbooks.csv";
 
     int cat;
     bool required_book = false;
     string str, borrow_book_title;
     
-
-    ifstream file_1("Novels.csv"), file_2("Acaemics_Books.csv"), file_3("Self-Help_books.csv");  
+    ifstream file_1(a), file_2(b), file_3(c);  
     ofstream temp_novelFile("temp_1.csv"), temp_academicsFile("temp_2.csv"), temp_selfHelpFile("temp_3.csv");
-  
-    cout<<"Select Category from which you want to borrow book(s)."<<endl;
-    cout<<"1. Novels."<<endl;
-    cout<<"2. Academics."<<endl;
-    cout<<"3. Self-help."<<endl;
-    cin>>cat;
 
-    if(!file_1.is_open() && !file_2.is_open() && !file_3.is_open() ){
-        if(!temp_novelFile.is_open() && !temp_academicsFile.is_open() && temp_selfHelpFile.is_open()){
-            cout<<"Error. Something wrong with file(s) opening."<<endl;
-        }
-    }else{
-        switch(cat){
-            case 1:
-                cout<<"Enter book title."<<endl;
-                getline(cin, borrow_book_title);
+    if (!file_1.is_open() || !file_2.is_open() || !file_3.is_open() || 
+        !temp_novelFile.is_open() || !temp_academicsFile.is_open() || !temp_selfHelpFile.is_open()) {
+        cout << "Error opening file(s)." << endl;
+        return;
+    }
 
-                while(getline(file_1, str)){
-                    stringstream file_string(str);
-                    string title, author, quantity_in_str;
+    cout << "Select Category from which you want to borrow book(s)." << endl;
+    cout << "1. Novels." << endl;
+    cout << "2. Academics." << endl;
+    cout << "3. Self-help." << endl;
+    cin >> cat;
 
-                    getline(file_string, title, ',');
-                    getline(file_string, author, ',');
-                    getline(file_string, quantity_in_str, ',');
+    cin.ignore(); 
 
-                    int quantity = stoi(quantity_in_str);
+    cout << "Enter book title: ";
+    getline(cin, borrow_book_title);
 
-                    if(title == borrow_book_title){
-                        required_book = true;
-                        if(required_book == true && quantity > 0){
-                            cout<<"Sucessfully borrowed the book."<<endl;
-                            quantity--;
-                        }else if(quantity == 0){
-                            cout<<"Book currently not avaible in library."<<endl;
+    stringstream file_string;
+    string serial_no, title, author, quantity_in_str;
+    int quantity;
+
+    switch (cat) {
+        case 1:
+            while (getline(file_1, str)) {
+                file_string.str(str);
+                file_string.clear();
+                getline(file_string, serial_no, ',');
+                getline(file_string, title, ',');
+                getline(file_string, author, ',');
+                getline(file_string, quantity_in_str, ',');
+                quantity = stoi(quantity_in_str);
+
+                if (title == borrow_book_title) {
+                    required_book = true;
+                    if (quantity > 0) {
+                        cout << "Successfully borrowed the book." << endl;
+                        quantity--;
+                    } else {
+                        cout << "Book currently not available in library." << endl;
                     }
-
-                        if(required_book == false){
-                            cout<<"Book Not Found."<<endl;
-                        }
-
-                        temp_novelFile<<title<<","<<author<<","<<quantity;
-                    }
-
                 }
 
-                file_1.close();
-                temp_novelFile.close();
-
-                remove(a);
-                rename("temp_novelFile.csv", a);
+                temp_novelFile << title << "," << author << "," << quantity << "\n";
+            }
             break;
 
-            case 2:
-                cout<<"Enter book title."<<endl;
-                getline(cin, borrow_book_title);
+        case 2:
+            while (getline(file_2, str)) {
+                file_string.str(str);
+                file_string.clear();
+                getline(file_string, serial_no, ',');
+                getline(file_string, title, ',');
+                getline(file_string, author, ',');
+                getline(file_string, quantity_in_str, ',');
+                quantity = stoi(quantity_in_str);
 
-                while(getline(file_2, str)){
-                    stringstream file_string(str);
-                    string title, author, quantity_in_str;
-
-                    getline(file_string, title, ',');
-                    getline(file_string, author, ',');
-                    getline(file_string, quantity_in_str, ',');
-
-                    int quantity = stoi(quantity_in_str);
-
-                    if(title == borrow_book_title){
-                        required_book = true;
-                        if(required_book == true && quantity > 0){
-                            cout<<"Sucessfully borrowed the book."<<endl;
-                            quantity--;
-                        }else if(quantity == 0){
-                            cout<<"Book currently not avaible in library."<<endl;
+                if (title == borrow_book_title) {
+                    required_book = true;
+                    if (quantity > 0) {
+                        cout << "Successfully borrowed the book." << endl;
+                        quantity--; 
+                    } else {
+                        cout << "Book currently not available in library." << endl;
                     }
-
-                        if(required_book == false){
-                            cout<<"Book Not Found."<<endl;
-                        }
-
-                        temp_academicsFile<<title<<","<<author<<","<<quantity;
-                    }
-
                 }
 
-                file_2.close();
-                temp_academicsFile.close();
+                temp_academicsFile << title << "," << author << "," << quantity << "\n";
+            }
             break;
 
-            case 3:
-                cout<<"Enter book title."<<endl;
-                getline(cin, borrow_book_title);
+        case 3:
+            while (getline(file_3, str)) {
+                file_string.str(str);
+                file_string.clear();
+                getline(file_string, serial_no, ',');
+                getline(file_string, title, ',');
+                getline(file_string, author, ',');
+                getline(file_string, quantity_in_str, ',');
+                quantity = stoi(quantity_in_str);
 
-                while(getline(file_3, str)){
-                    stringstream file_string(str);
-                    string title, author, quantity_in_str;
-
-                    getline(file_string, title, ',');
-                    getline(file_string, author, ',');
-                    getline(file_string, quantity_in_str, ',');
-
-                    int quantity = stoi(quantity_in_str);
-
-                    if(title == borrow_book_title){
-                        required_book = true;
-                        if(required_book == true && quantity > 0){
-                            cout<<"Sucessfully borrowed the book."<<endl;
-                            quantity--;
-                        }else if(quantity == 0){
-                            cout<<"Book currently not avaible in library."<<endl;
+                if (title == borrow_book_title) {
+                    required_book = true;
+                    if (quantity > 0) {
+                        cout << "Successfully borrowed the book." << endl;
+                        quantity--;  
+                    } else {
+                        cout << "Book currently not available in library." << endl;
                     }
-
-                        if(required_book == false){
-                            cout<<"Book Not Found."<<endl;
-                        }
-
-                        temp_selfHelpFile<<title<<","<<author<<","<<quantity;
-                    }
-
                 }
 
-                file_3.close();
-                temp_selfHelpFile.close();
+                temp_selfHelpFile << title << "," << author << "," << quantity << "\n";
+            }
             break;
 
-            default:
-                cout<<"Invalid category."<<endl;
+        default:
+            cout << "Invalid category." << endl;
             break;
-        }  
+    }
+
+    file_1.close();
+    file_2.close();
+    file_3.close();
+    temp_novelFile.close();
+    temp_academicsFile.close();
+    temp_selfHelpFile.close();
+
+    
+    if (required_book) {
+        remove(a);
+        remove(b);
+        remove(c);
+
+       
+        rename("temp_1.csv", a); 
+        rename("temp_2.csv", b); 
+        rename("temp_3.csv", c); 
     }
 }
